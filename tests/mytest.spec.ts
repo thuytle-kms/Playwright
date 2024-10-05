@@ -1,0 +1,41 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://www.demoblaze.com/');
+  await page.getByRole('link', { name: 'About us' }).click();
+  await page.locator('#videoModal').getByText('Close', { exact: true }).click();
+  await page.getByRole('link', { name: 'Log in' }).click();
+  await page.locator('#loginusername').click();
+  await page.locator('#loginusername').fill('admin');
+  await page.locator('#loginpassword').click();
+  await page.locator('#loginpassword').fill('admin');
+  await page.getByRole('button', { name: 'Log in' }).click();
+  await page.locator('#next2').click();
+  await page.getByRole('heading', { name: 'MacBook air' }).click();
+  page.once('dialog', dialog => {
+    console.log(`Dialog message: ${dialog.message()}`);
+    dialog.dismiss().catch(() => {});
+  });
+  await page.getByRole('link', { name: 'Add to cart' }).click();
+  await page.getByRole('link', { name: 'Cart', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Products' })).toBeVisible();
+  await expect(page.locator('#tbodyid')).toContainText('MacBook air');
+  await page.getByRole('button', { name: 'Place Order' }).click();
+  await page.getByLabel('Total:').click();
+  await page.getByLabel('Total:').fill('test');
+  await page.getByLabel('Country:').click();
+  await page.getByLabel('Country:').fill('Vietnam');
+  await page.getByLabel('City:').click();
+  await page.getByLabel('City:').fill('Hanoi');
+  await page.getByLabel('Credit card:').click();
+  await page.getByLabel('Credit card:').fill('123456');
+  await page.getByLabel('Month:').click();
+  await page.getByLabel('Month:').fill('12');
+  await page.getByLabel('Year:').click();
+  await page.getByLabel('Year:').fill('2024');
+  await page.getByLabel('Year:').press('Enter');
+  await page.getByText('Place order ×').click();
+  await page.getByLabel('Place order').getByLabel('Close').click();
+  await page.getByRole('link', { name: 'Delete' }).click();
+  await page.getByRole('link', { name: 'Home (current)' }).click();
+});

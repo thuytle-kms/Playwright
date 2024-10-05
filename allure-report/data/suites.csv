@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","28109","Login","chrome","Wed Oct 02 22:49:20 ICT 2024","passed","Wed Oct 02 22:49:48 ICT 2024","","login.spec.ts","",""
+"","14430","Login","firefox","Wed Oct 02 22:49:00 ICT 2024","passed","Wed Oct 02 22:49:15 ICT 2024","","login.spec.ts","",""
+"","13009","Login","chromium","Wed Oct 02 22:49:01 ICT 2024","passed","Wed Oct 02 22:49:14 ICT 2024","","login.spec.ts","",""
+"","38549","Login","edge","Wed Oct 02 22:49:00 ICT 2024","passed","Wed Oct 02 22:49:39 ICT 2024","","login.spec.ts","",""
+"","16283","Login","webkit","Wed Oct 02 22:49:00 ICT 2024","passed","Wed Oct 02 22:49:17 ICT 2024","","login.spec.ts","",""
